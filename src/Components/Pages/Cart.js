@@ -1,7 +1,18 @@
 import { useManage } from "../Cartmanage-context";
+import { useNavigate } from 'react-router-dom';
 function Cart(){
     const {state,dispatch}=useManage();
-
+    const Navigate=useNavigate();
+    if(state.items===0){
+        return (
+            <div className="emptyWishlist">
+            <p className="wishlist_empty">Your Cart is Currently Empty !</p>
+            <button className='startShopping' onClick={()=>Navigate("/products")}>Start Shopping !</button>
+            </div>
+        )
+    }
+    else
+    {
     return(
 
         <div>
@@ -61,5 +72,6 @@ function Cart(){
         </div>
         
     )
+    }
 }
 export default Cart;

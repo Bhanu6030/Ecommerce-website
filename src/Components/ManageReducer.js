@@ -2,7 +2,8 @@ function ManageReducer(state, action) {
     switch (action.type) {
         case 'ADDTOCART':
             return {
-                ...state, items: state.items + action.payload, cartItems: [...state.cartItems, action.addImage],totalprice:state.totalprice+action.value.price
+                ...state, items: state.items + action.payload, cartItems: [...state.cartItems, action.addImage],
+             totalprice:state.totalprice+action.addImage.price
             };
         case 'ADDTOWISHLIST':
             return {

@@ -17,6 +17,15 @@ function Wishlist(){
             )
         }
     }
+    if(state.wishlist===0){
+        return (
+            <div className="emptyWishlist">
+            <p className="wishlist_empty">Your Wishlist is Currently Empty !</p>
+            <button className='startShopping' onClick={()=>Navigate("/products")}>Start Shopping !</button>
+            </div>
+        )
+    }
+    else{
     return(
         <div>
         {/* <h2 onClick={()=>dispatch({type:"ADDTOWISHLIST"})}>Items in wishlist{state.wishlist}</h2> */}
@@ -61,12 +70,15 @@ function Wishlist(){
                         </div>
                 </div>
                 </div>
-            ))}
+            ))
+            }
+            
             {/* <h1>Items in cart{state.items}</h1> */}
             
         </div>
         </div>
         
     )
+        }
 }
 export default Wishlist;
